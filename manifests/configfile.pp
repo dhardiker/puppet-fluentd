@@ -1,5 +1,7 @@
 # == definition fluentd::configfile
-define fluentd::configfile {
+define fluentd::configfile (
+    $ensure = 'present',
+) {
 
     $source_conf = "/etc/td-agent/config.d/${title}.conf"
     concat{$source_conf:
